@@ -12,7 +12,7 @@ npm install mailhide
 
 ```javascript
 
-var mailhide = require('mailhide');
+var Mailhide = require('mailhide');
 var mailhider = new Mailhide({
   privateKey: "9aa749cd1f9eece41df3e18010b922dd",
   publicKeyFile: __dirname + "/example.public.key"
