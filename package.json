@@ -1,0 +1,28 @@
+{
+  "name": "mailhide",
+  "version": "0.1.0",
+  "description": "easy reCAPTCHA Mailhide API",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/coffee ./example/example.coffee",
+    "build": "./node_modules/.bin/coffee -o ./lib -c ./src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndersDJohnson/node-mailhide.git"
+  },
+  "keywords": [
+    "mailhide",
+    "recaptcha",
+    "email"
+  ],
+  "author": "Anders D. Johnson",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "~1.4.0"
+  }
+}
