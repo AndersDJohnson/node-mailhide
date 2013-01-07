@@ -6,11 +6,13 @@ mailhider = new Mailhide {
   publicKeyFile: "#{__dirname}/example.public.key"
 }
 
-email = 'johndoe@example.com'
+hide = (email) ->
+  url = mailhider.url email
+  
+  util.puts "Open this URL in your browser:\n"
+  util.puts "#{url}\n"
+  util.puts "Make sure it decodes to '#{email}'.\n"
 
-url = mailhider.url email
-
-util.puts "Open this URL in your browser:\n"
-util.puts "#{url}\n"
-util.puts "Make sure it decodes to '#{email}'.\n"
-
+# Testing re-use
+hide 'johndoe@example.com'
+hide 'alice@examle.com'

@@ -30,15 +30,18 @@ class Mailhide
     if options.cipher?
       @cipher = options.cipher
     else
-      key = new Buffer @privateKey, 'hex'
-      iv = new Buffer '00000000000000000000000000000000', 'hex'
-      @cipher = crypto.createCipheriv 'aes-128-cbc', key, iv
+      @createCipher()
+  
+  createCipher: ->
+    key = new Buffer @privateKey, 'hex'
+    iv = new Buffer '00000000000000000000000000000000', 'hex'
+    @cipher = crypto.createCipheriv 'aes-128-cbc', key, iv
   
   url: (email, encoding = 'utf8') ->
     ciphered = ''
     ciphered += @cipher.update email, encoding, 'base64'
     ciphered += @cipher.final 'base64'
-    
+	  
     cipheredBase64 = ciphered
       .replace(/\+/g, '-')
       .replace(/\//g, '_')
@@ -47,6 +50,10 @@ class Mailhide
     url += querystring.stringify
       k: @publicKey
       c: cipheredBase64
+    
+    # re-create cipher for next round
+    # otherwise 'Decipher fail' error
+    @createCipher()
     
     return url
   
