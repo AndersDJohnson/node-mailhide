@@ -1,6 +1,6 @@
 # Mailhide
 
-Provides easy use of the [reCAPTCHA Mailhide][mailhide] [API][mailhideAPI].
+Provides easy use of the [Google reCAPTCHA Mailhide][mailhide] [API][mailhideAPI].
 
 ## Install
 
@@ -9,6 +9,10 @@ npm install mailhide
 ```
 
 ## Usage
+
+You will need a Mailhide API key, both public and private, which you can generate [here][mailhideAPIkey].
+
+Then use as follows:
 
 ```javascript
 
@@ -28,4 +32,4 @@ Also see "examples/example.coffee".
 
 [mailhide]: http://www.google.com/recaptcha/mailhide/
 [mailhideAPI]: https://developers.google.com/recaptcha/docs/mailhideapi
-
+[mailhideAPIkey]: http://www.google.com/recaptcha/mailhide/apikey
