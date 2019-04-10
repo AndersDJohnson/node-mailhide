@@ -1,6 +1,6 @@
 {
   "name": "mailhide",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "easy reCAPTCHA Mailhide API",
   "main": "index.js",
   "directories": {
@@ -20,7 +20,7 @@
     "recaptcha",
     "email"
   ],
-  "author": "Anders D. Johnson",
+  "author": "Anders D. Johnson (https://andersdjohnson.com)",
   "license": "MIT",
   "devDependencies": {
     "coffee-script": "~1.4.0"
